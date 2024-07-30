@@ -1,19 +1,19 @@
-// app/[slug]/[member]/page.tsx
+// app/[slug]/page.tsx
 import { Suspense } from 'react'
-import { Skeleton } from '@/components/ui/skeleton'
-import { MemberContent } from '@/components/memberview.server'
+import { Skeleton } from '@/web/components/ui/skeleton'
+import { GroupContent } from '@/web/components/groupview.server'
 
-export default function Page({ params }: { params: { slug: string; member: string } }) {
+export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="mx-auto">
-      <Suspense fallback={<MemberSkeleton />}>
-        <MemberContent groupName={params.slug} memberName={params.member} />
+      <Suspense fallback={<GroupSkeleton />}>
+        <GroupContent groupName={params.slug} />
       </Suspense>
     </div>
   )
 }
 
-function MemberSkeleton() {
+function GroupSkeleton() {
   return (
     <>
       <Skeleton className="h-8 w-48 my-4" />

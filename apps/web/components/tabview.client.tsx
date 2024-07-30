@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Skeleton } from '@/components/ui/skeleton'
-import { slugify } from '@/lib/utils'
-import type { Member } from '@/types'
+import { Tabs, TabsList, TabsTrigger } from '@/web/components/ui/tabs'
+import { Skeleton } from '@/web/components/ui/skeleton'
+import { slugify } from '@/web/lib/utils'
+import type { Member } from '../types'
 
 export default function TabView({ groupName, members }: { groupName: string; members?: Member[] }) {
   const segment = useSelectedLayoutSegment()

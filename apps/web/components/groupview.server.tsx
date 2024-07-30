@@ -1,6 +1,6 @@
 import { use } from 'react'
-import type { Group } from '@/types'
-import { CardView } from '@/components/cardview'
+import type { Group } from '@/web/types'
+import { CardView } from '@/web/components/cardview'
 
 async function getGroup({ groupName }: { groupName: string }) {
   const res = await fetch(`http://localhost:5678/${groupName}`, {

@@ -1,5 +1,5 @@
 import { use } from 'react'
-import TabView from '@/components/tabview.client'
+import TabView from '@/web/components/tabview.client'
 
 async function getMembers({ groupName }: { groupName: string }) {
   const res = await fetch(`http://localhost:5678/${groupName}/members`, {

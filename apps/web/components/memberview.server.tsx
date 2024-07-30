@@ -1,7 +1,7 @@
 // app/[slug]/[member]/MemberContent.tsx
 import { use } from 'react'
-import type { Member } from '@/types'
-import { CardView } from '@/components/cardview'
+import type { Member } from '../types'
+import { CardView } from '@/web/components/cardview'
 
 async function getMember({ groupName, memberName }: { groupName: string; memberName: string }) {
   const res = await fetch(`http://localhost:5678/${groupName}/${memberName}`, {

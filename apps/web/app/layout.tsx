@@ -1,10 +1,10 @@
-import '@/app/globals.css'
+import '@/web/app/globals.css'
 import { Inter as FontSans } from 'next/font/google'
-import { cn } from '@/lib/utils'
+import { cn } from '@/web/lib/utils'
 import { Suspense } from 'react'
-import SuspensedSidebar from '@/components/sidebar.server'
+import SuspensedSidebar from '@/web/components/sidebar.server'
 
-import Sidebar from '@/components/sidebar.client'
+import Sidebar from '@/web/components/sidebar.client'
 
 const fontSans = FontSans({
   subsets: ['latin'],

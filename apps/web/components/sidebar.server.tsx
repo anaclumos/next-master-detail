@@ -1,5 +1,5 @@
 import { use } from 'react'
-import Sidebar from '@/components/sidebar.client'
+import Sidebar from '@/web/components/sidebar.client'
 
 const getGroups = async () => {
   const res = await fetch('http://localhost:5678/groups', {

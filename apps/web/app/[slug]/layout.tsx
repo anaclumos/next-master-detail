@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
-import SuspendedTabView from '@/components/tabview.server'
-import TabView from '@/components/tabview.client'
+import SuspendedTabView from '@/web/components/tabview.server'
+import TabView from '@/web/components/tabview.client'
 
 export default function Layout({
   children,

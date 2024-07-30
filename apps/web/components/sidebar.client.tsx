@@ -1,13 +1,18 @@
 'use client'
-import { cn, slugify } from '@/lib/utils'
+import { cn, slugify } from '@/web/lib/utils'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import Image from 'next/image'
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableRow } from '@/web/components/ui/table'
 import { useState } from 'react'
-import { DropdownMenuContent, DropdownMenuItem, DropdownMenu, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { Button } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenu,
+  DropdownMenuTrigger,
+} from '@/web/components/ui/dropdown-menu'
+import { Button } from '@/web/components/ui/button'
+import { Skeleton } from '@/web/components/ui/skeleton'
 
 const countDaysSince = (str: string) => {
   const date = new Date(str)
@@ -27,6 +32,10 @@ export default function Sidebar({
     count: number
   }[]
 }) {
+  const pathname = useSelectedLayoutSegment()
+  const [sortBy, setSortBy] = useState('name')
+  const [sortOrder, setSortOrder] = useState('asc')
+
   if (!groups)
     return (
       <div className="bg-background overflow-x-clip">
@@ -57,10 +66,6 @@ export default function Sidebar({
         </Table>
       </div>
     )
-
-  const pathname = useSelectedLayoutSegment()
-  const [sortBy, setSortBy] = useState('name')
-  const [sortOrder, setSortOrder] = useState('asc')
 
   const sortedGroups = [...groups].sort((a, b) => {
     if (sortBy === 'name') {
