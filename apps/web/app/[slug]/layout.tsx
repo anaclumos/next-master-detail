@@ -13,7 +13,7 @@ export default function Layout({
   return (
     <>
       <div className="p-4 border-b overflow-x-auto">
-        <nav className="flex">
+        <nav className="flex pr-4">
           <Link href="/" className="font-bold md:hidden pr-4 text-2xl flex items-center">
             ←
           </Link>
