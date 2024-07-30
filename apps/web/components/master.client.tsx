@@ -40,7 +40,13 @@ export default function Master({
 
   if (!groups)
     return (
-      <div className={cn('bg-background overflow-x-clip', mode === 'desktop' && 'hidden md:block', mode === 'mobile' && 'md:hidden')}>
+      <div
+        className={cn(
+          'h-screen bg-background overflow-x-clip',
+          mode === 'desktop' && 'hidden md:block',
+          mode === 'mobile' && 'md:hidden'
+        )}
+      >
         <div className={'p-4 border-b'}>
           <Skeleton className="h-9 w-24" />
         </div>
@@ -87,7 +93,13 @@ export default function Master({
   }
 
   return (
-    <div className={cn("bg-background overflow-hidden", mode === 'desktop' && 'hidden md:block', mode === 'mobile' && 'md:hidden')}>
+    <div
+      className={cn(
+        'h-screen bg-background overflow-hidden',
+        mode === 'desktop' && 'hidden md:block',
+        mode === 'mobile' && 'md:hidden'
+      )}
+    >
       <div className="p-4 border-b">
         <h2 className="text-lg font-semibold py-1">{sortedGroups.length} Groups</h2>
       </div>
@@ -112,7 +124,7 @@ export default function Master({
         <TableBody>
           {sortedGroups.map((group) => (
             <TableRow key={group.name}>
-              <TableCell className="p-0">
+              <TableCell className="p-0 border-b">
                 <Link
                   href={`/${slugify(group.name)}`}
                   className={cn(

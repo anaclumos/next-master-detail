@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
   :root {
     --background: 0 0% 100%;
@@ -35,15 +35,15 @@
 
   .san-francisco {
     font-family:
-      "SF Pro",
+      'SF Pro',
       ui-sans-serif,
       -apple-system,
       BlinkMacSystemFont,
-      "Apple SD Gothic Neo",
-      "Pretendard Variable",
-      "Pretendard",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
+      'Apple SD Gothic Neo',
+      'Pretendard Variable',
+      'Pretendard',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
       system-ui,
       -system-ui,
       sans-serif;

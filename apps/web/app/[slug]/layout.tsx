@@ -14,9 +14,9 @@ export default function Layout({
     <>
       <div className="p-4 border-b overflow-x-auto">
         <nav className="flex">
-        <Link href="/" className='font-bold md:hidden pr-4 text-2xl flex items-center'>
-  ←
-</Link>
+          <Link href="/" className="font-bold md:hidden pr-4 text-2xl flex items-center">
+            ←
+          </Link>
           <Suspense fallback={<Detail groupName={params.slug} />}>
             <SuspendedDetail groupName={params.slug} />
           </Suspense>

@@ -9,9 +9,7 @@ const getGroups = async () => {
   return groups
 }
 
-export default function SuspensedMaster(
-  { mode }: { mode: 'desktop' | 'mobile' } = { mode: 'desktop' }
-) {
+export default function SuspensedMaster({ mode }: { mode: 'desktop' | 'mobile' } = { mode: 'desktop' }) {
   const groups = use(getGroups())
   return <Master groups={groups} mode={mode} />
 }

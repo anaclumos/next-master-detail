@@ -24,7 +24,6 @@ export default function Detail({ groupName, members }: { groupName: string; memb
   }
 
   return (
-
     <Tabs defaultValue={segment ?? 'home'}>
       <TabsList>
         <Link href={`/${groupName}`}>
