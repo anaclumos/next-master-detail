@@ -13,7 +13,7 @@ export function CardView({ title, value, image }: CardViewProps) {
       {image ? (
         <Card>
           <div className="relative aspect-square w-full">
-            <Image src={image} alt={title ?? value ?? ''} fill className="rounded-md object-cover" />
+            <Image src={image} alt={title ?? value ?? ''} fill className="rounded-md object-cover" unoptimized />
           </div>
         </Card>
       ) : (

@@ -119,7 +119,7 @@ export default function Sidebar({
                   )}
                 >
                   <div className="relative w-[40px] h-[40px] flex-shrink-0">
-                    <Image src={group.image} alt={group.name} fill className="rounded-md object-cover" />
+                    <Image src={group.image} alt={group.name} fill className="rounded-md object-cover" unoptimized />
                   </div>
                   <div>
                     <span className="font-medium">{group.name}</span>

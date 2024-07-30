@@ -16,12 +16,21 @@ const app = new Elysia()
   .get('/', () => '200')
   .get('/groups', async () => {
     await randomHang()
-    return db.groups.map(({ name, debut, image, members }) => ({
-      name,
-      debut,
-      image,
-      count: members.length,
-    }))
+    return db.groups
+      .map(({ name, debut, image, members }) => ({
+        name,
+        debut,
+        image,
+        count: members.length,
+        sort: Math.random(),
+      }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ name, debut, image, count }) => ({
+        name,
+        debut,
+        image,
+        count,
+      }))
   })
   .get('/:group/:name', async ({ params: { group, name } }) => {
     await randomHang()
