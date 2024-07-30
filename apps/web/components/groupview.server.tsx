@@ -20,15 +20,6 @@ export function GroupContent({ groupName }: { groupName: string }) {
         <CardView title="Debut" value={new Date(group.debut).toLocaleDateString('ko-KR')} />
         <CardView title="Members" value={String(group.members.length)} />
         {group.image && <CardView value={group.name} image={group.image} />}
-        <CardView title="Debut" value={new Date(group.debut).toLocaleDateString('ko-KR')} />
-        <CardView title="Members" value={String(group.members.length)} />
-        {group.image && <CardView value={group.name} image={group.image} />}
-        <CardView title="Debut" value={new Date(group.debut).toLocaleDateString('ko-KR')} />
-        <CardView title="Members" value={String(group.members.length)} />
-        {group.image && <CardView value={group.name} image={group.image} />}
-        <CardView title="Debut" value={new Date(group.debut).toLocaleDateString('ko-KR')} />
-        <CardView title="Members" value={String(group.members.length)} />
-        {group.image && <CardView value={group.name} image={group.image} />}
       </div>
     </>
   )

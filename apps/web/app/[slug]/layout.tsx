@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
-import SuspendedTabView from '@/web/components/tabview.server'
-import TabView from '@/web/components/tabview.client'
+import SuspendedDetail from '@/web/components/detail.server'
+import Detail from '@/web/components/detail.client'
+import Link from 'next/link'
 
 export default function Layout({
   children,
@@ -11,10 +12,13 @@ export default function Layout({
 }) {
   return (
     <>
-      <div className="p-2 md:p-4 border-b">
+      <div className="p-4 border-b overflow-x-auto">
         <nav className="flex">
-          <Suspense fallback={<TabView groupName={params.slug} />}>
-            <SuspendedTabView groupName={params.slug} />
+        <Link href="/" className='font-bold md:hidden pr-4 text-2xl flex items-center'>
+  ←
+</Link>
+          <Suspense fallback={<Detail groupName={params.slug} />}>
+            <SuspendedDetail groupName={params.slug} />
           </Suspense>
         </nav>
       </div>

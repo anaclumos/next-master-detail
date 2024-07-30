@@ -1,15 +1,9 @@
 import '@/web/app/globals.css'
-import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/web/lib/utils'
 import { Suspense } from 'react'
-import SuspensedSidebar from '@/web/components/sidebar.server'
+import SuspensedMaster from '@/web/components/master.server'
 
-import Sidebar from '@/web/components/sidebar.client'
-
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-})
+import Master from '@/web/components/master.client'
 
 export default function RootLayout({
   children,
@@ -19,10 +13,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
+      <body className={cn('min-h-screen bg-background antialiased san-francisco')}>
         <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] max-w-8xl mx-auto rounded-lg">
-          <Suspense fallback={<Sidebar />}>
-            <SuspensedSidebar />
+          <Suspense fallback={<Master mode="desktop" />}>
+            <SuspensedMaster mode="desktop" />
           </Suspense>
           <div className="bg-background border-l overflow-hidden">{children}</div>
         </div>

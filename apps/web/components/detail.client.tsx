@@ -7,7 +7,7 @@ import { Skeleton } from '@/web/components/ui/skeleton'
 import { slugify } from '@/web/lib/utils'
 import type { Member } from '../types'
 
-export default function TabView({ groupName, members }: { groupName: string; members?: Member[] }) {
+export default function Detail({ groupName, members }: { groupName: string; members?: Member[] }) {
   const segment = useSelectedLayoutSegment()
 
   if (!members) {
@@ -24,6 +24,7 @@ export default function TabView({ groupName, members }: { groupName: string; mem
   }
 
   return (
+
     <Tabs defaultValue={segment ?? 'home'}>
       <TabsList>
         <Link href={`/${groupName}`}>

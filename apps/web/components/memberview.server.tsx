@@ -21,15 +21,6 @@ export function MemberContent({ groupName, memberName }: { groupName: string; me
         <CardView title="Birthday" value={new Date(member.birthday).toLocaleDateString('ko-KR')} />
         <CardView title="Country" value={member.country} />
         <CardView title="Profile" value={member.name} image={member.image} />
-        <CardView title="Birthday" value={new Date(member.birthday).toLocaleDateString('ko-KR')} />
-        <CardView title="Country" value={member.country} />
-        <CardView title="Profile" value={member.name} image={member.image} />
-        <CardView title="Birthday" value={new Date(member.birthday).toLocaleDateString('ko-KR')} />
-        <CardView title="Country" value={member.country} />
-        <CardView title="Profile" value={member.name} image={member.image} />
-        <CardView title="Birthday" value={new Date(member.birthday).toLocaleDateString('ko-KR')} />
-        <CardView title="Country" value={member.country} />
-        <CardView title="Profile" value={member.name} image={member.image} />
       </div>
     </>
   )

@@ -1,5 +1,5 @@
 import { use } from 'react'
-import TabView from '@/web/components/tabview.client'
+import Detail from '@/web/components/detail.client'
 
 async function getMembers({ groupName }: { groupName: string }) {
   const res = await fetch(`http://localhost:5678/${groupName}/members`, {
@@ -9,7 +9,7 @@ async function getMembers({ groupName }: { groupName: string }) {
   return members
 }
 
-export default function SuspendedTabView({ groupName }: { groupName: string }) {
+export default function SuspendedDetail({ groupName }: { groupName: string }) {
   const members = use(getMembers({ groupName }))
-  return <TabView groupName={groupName} members={members} />
+  return <Detail groupName={groupName} members={members} />
 }

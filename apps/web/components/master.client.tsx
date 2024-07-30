@@ -22,8 +22,9 @@ const countDaysSince = (str: string) => {
   return days
 }
 
-export default function Sidebar({
+export default function Master({
   groups,
+  mode,
 }: {
   groups?: {
     name: string
@@ -31,6 +32,7 @@ export default function Sidebar({
     image: string
     count: number
   }[]
+  mode: 'desktop' | 'mobile'
 }) {
   const pathname = useSelectedLayoutSegment()
   const [sortBy, setSortBy] = useState('name')
@@ -38,7 +40,7 @@ export default function Sidebar({
 
   if (!groups)
     return (
-      <div className="bg-background overflow-x-clip">
+      <div className={cn('bg-background overflow-x-clip', mode === 'desktop' && 'hidden md:block', mode === 'mobile' && 'md:hidden')}>
         <div className={'p-4 border-b'}>
           <Skeleton className="h-9 w-24" />
         </div>
@@ -85,7 +87,7 @@ export default function Sidebar({
   }
 
   return (
-    <div className="bg-background overflow-hidden">
+    <div className={cn("bg-background overflow-hidden", mode === 'desktop' && 'hidden md:block', mode === 'mobile' && 'md:hidden')}>
       <div className="p-4 border-b">
         <h2 className="text-lg font-semibold py-1">{sortedGroups.length} Groups</h2>
       </div>
