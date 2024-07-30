@@ -42,14 +42,19 @@ export default function Master({
     return (
       <div
         className={cn(
-          'h-screen bg-background overflow-x-clip',
+          'h-screen bg-background overflow-y-auto ',
           mode === 'desktop' && 'hidden md:block',
           mode === 'mobile' && 'md:hidden'
         )}
       >
-        <div className={'p-4 border-b'}>
+
+        <div className="p-4 border-b flex justify-between items-center">
           <Skeleton className="h-9 w-24" />
-        </div>
+        <a className="text-sm font-medium text-muted-foreground" href="https://github.com/anaclumos/next-master-detail" target="_blank" rel="noreferrer noopener nofollow">
+          GitHub
+        </a>
+      </div>
+
         <div className={'gap-4 flex items-center justify-between border-b p-2 pl-4'}>
           <Skeleton className="h-4 w-32" />
           <Skeleton className="h-9 w-9" />
@@ -60,7 +65,7 @@ export default function Master({
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
               <TableRow key={i}>
                 <TableCell className="p-0">
-                  <div className="flex items-center gap-4 p-4 overflow-hidden max-w-full">
+                  <div className="flex items-center gap-4 p-4 max-w-full">
                     <Skeleton className="w-[40px] h-[40px] rounded-md" />
                     <div className="space-y-2">
                       <Skeleton className="h-4 w-32" />
@@ -95,13 +100,16 @@ export default function Master({
   return (
     <div
       className={cn(
-        'h-screen bg-background overflow-hidden',
+        'h-screen bg-background overflow-y-auto',
         mode === 'desktop' && 'hidden md:block',
         mode === 'mobile' && 'md:hidden'
       )}
     >
-      <div className="p-4 border-b">
-        <h2 className="text-lg font-semibold py-1">{sortedGroups.length} Groups</h2>
+      <div className="p-4 border-b flex justify-between items-center sticky top-0 z-10 backdrop-blur-lg">
+        <h2 className="text-lg font-semibold py-1 gap-4">{sortedGroups.length} groups</h2>
+        <a className="text-sm font-medium text-muted-foreground" href="https://github.com/anaclumos/next-master-detail" target="_blank" rel="noreferrer noopener nofollow">
+          GitHub
+        </a>
       </div>
       <div className="gap-4 flex items-center justify-between border-b p-2 pl-4">
         <DropdownMenu>
